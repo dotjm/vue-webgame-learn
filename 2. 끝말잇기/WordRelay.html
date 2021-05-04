@@ -15,12 +15,12 @@
             <button type="submit">입력!</button>
         </form>
         <div>{{result}}</div> -->
-        <word-relay></word-relay>
-        <word-relay></word-relay>
-        <word-relay></word-relay>
+        <word-relay start-word="제로초"></word-relay>
+        <word-relay start-word="초밥"></word-relay>
+        <word-relay start-word="바보"></word-relay>
     </div>
     <script>
-        Vue.component('word-relay', { // 전역 컴포넌트
+        Vue.component('wordRelay', { // 전역 컴포넌트 props처럼 html쪽에서는 케밥케이스, js쪽에서는 케멜케이스로 가능
             template:` 
             <div>
                 <div>{{word}}</div>
@@ -31,9 +31,10 @@
                 <div>{{result}}</div>
             </div>
             `, //컨포넌트에서는 태그 여러개를 못하고 최종적으로는 하나로 감싸줘야 한다. 
+            props: ['startWord'], //위에서 props로 받을 데이터를 정해준다. 이때 html쪽에서는 케밥케이스로(소문자-소문자), js쪽에서는 케멀케이스 (첫번째 대문자만 소문자)
             data() { //인스턴스와 다르게 컨포넌트는 함수로 리턴 시켜야 함
                 return {
-                    word: '제로초',
+                    word: this.startWord,//시작 단어 props로 받은 걸로 정하기
                     value: '',
                     result: '',
                 };
