@@ -9,34 +9,15 @@
 </head>
 <body>
     <div id="root">
-        <!-- <div>{{word}}</div>
+        <div>{{word}}</div>
         <form v-on:submit="onSubmitForm">
             <input type="text" v-model="value">
             <button type="submit">입력!</button>
         </form>
-        <div>{{result}}</div> -->
-        <word-relay />
+        <div>{{result}}</div>
     </div>
     <script>
-        Vue.component('word-relay', {
-            template:`
-            <div>{{word}}</div>
-            <form v-on:submit="onSubmitForm">
-                <input type="text" v-model="value">
-                <button type="submit">입력!</button>
-            </form>
-            <div>{{result}}</div>
-            `,
-            data: {
-
-            }, 
-            methods: {
-
-            }
-        });
-    </script>
-    <script>
-        const app = new Vue({ //vue 인스턴스
+        const app = new Vue({
             el: '#root',
             data: {
                 word: '제로초',
