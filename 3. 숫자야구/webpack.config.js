@@ -10,6 +10,6 @@ module.exports = {
     plugins: {},
     output: {
         fillname: '[name].js',//=app.js
-        path: '.dist',
+        path: './dist',
     },
 };
